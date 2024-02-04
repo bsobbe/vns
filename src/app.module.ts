@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { join } from 'path';
@@ -18,8 +17,8 @@ import { CustomerModule } from './customer/customer.module';
         dateScalarMode: 'timestamp',
       },
       context: ({ request, reply }) => ({ request, reply }),
-      playground: true,
-      introspection: true, // TODO update this so that it's off in production;
+      playground: process.env.ISPROD === 'false' ? true : false,
+      introspection: process.env.ISPROD === 'false' ? true : false,
     }),
   ],
   controllers: [AppController],
