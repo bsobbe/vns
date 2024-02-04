@@ -15,6 +15,7 @@ model Customer {
   id        String   @id @unique @default(uuid())
   email     String   @unique
   password  String
+  isActive  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
