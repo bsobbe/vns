@@ -7,4 +7,7 @@ export class Tokens {
 
   @Field(() => String)
   refreshToken: string;
+
+  @Field(() => String)
+  type: string;
 }
