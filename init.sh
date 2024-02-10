@@ -1,3 +1,5 @@
 #!/bin/bash
-chmod +x ./waitforit.sh
-./waitforit.sh db:5432 -t 100 -- npx prisma migrate dev && npm run start:dev
+# Runs migration for dev on startup.
+npx prisma migrate dev
+# Runs the application in dev mode.
+npm run start:dev

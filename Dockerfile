@@ -1,5 +1,4 @@
-FROM node:lts-slim
-RUN apt-get update -y && apt-get install -y openssl
+FROM node:lts
 WORKDIR /home/node/vns
 COPY package*.json .
 RUN npm install
