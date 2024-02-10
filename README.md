@@ -43,6 +43,23 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 
 `localhost:8080/graphql` will return status `HTTP/200` if GraphQL is healthy.
 
+## Structure
+```code
+./src
+├── authentication
+├── customer
+├── lib
+```
+
+`authentication`:
+> Contains the authentication module. All the code related to authentication tokens, password validation, role validation, and JWT token configurations lies here.
+
+`customer`:
+> Contains the costumer module. All the code related to customer operations lies here including queries and mutations and input DTOs for the GraphQL API.
+
+`lib`:
+> Contains the entity types and code that is shared in application modules.
+
 ## Todo
 
 - [x] CRUD operations for customers (get, update, delete) by id or email.
