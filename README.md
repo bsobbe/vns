@@ -35,6 +35,9 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 
 4. Access GraphQL playground: `localhost:8080/graphql`
 
+## Run Tests
+`npm run test` will run the tests.
+
 ## Healthcheck
 `localhost:8080` will return `Beep!` with status `HTTP/200` if the service is healthy.
 
