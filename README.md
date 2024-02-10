@@ -10,7 +10,7 @@ Clone the project.
 git clone git@github.com:bsobbe/vns.git
 ```
 
-1. Open `vns/` directory.
+1. Open `./vns` directory.
 
 2. Copy `.env.example` file to `.env`. The latest env variables will be added to `.env.example`. So do not delete or rename this file. Then open the copied file and add your environment variables:
 
@@ -30,6 +30,15 @@ APP_PORT=8080
 NODE_ENV=dev
 JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReallyComplexThatConfusesBots!"
 ```
+
+3. Run `docker-compose up -d`
+
+4. Access GraphQL playground: `localhost:8080/graphql`
+
+## Healthcheck
+`localhost:8080` will return `Beep!` with status `HTTP/200` if the service is healthy.
+
+`localhost:8080/graphql` will return status `HTTP/200` if GraphQL is healthy.
 
 ## Todo
 
