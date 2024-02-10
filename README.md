@@ -70,6 +70,9 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [x] Restrict access to get customers operation from unauthenticated users.
 - [x] Restrict access to delete customer and update customer operations from unauthenticated users and customers with USER role.
 - [x] Ability to verify customer's account after signup with activation code.
+- [x] Fix cursor in Customers query.
+- [x] Add orderBy to Customer query.
+- [x] Dockerize.
 - [ ] More test coverage.
 - [ ] Server-side logout functionality.
 - [ ] Secure key rotation mechanism for refresh tokens.
