@@ -6,6 +6,9 @@ import { AppService } from './app.service';
 import { join } from 'path';
 import { PrismaService } from './prisma.service';
 import { CustomerModule } from './customer/customer.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { LoggerModule } from 'nestjs-pino';
+import { EnvLoader } from './env.loader';
 
 @Module({
   imports: [
@@ -17,9 +20,22 @@ import { CustomerModule } from './customer/customer.module';
         dateScalarMode: 'timestamp',
       },
       context: ({ request, reply }) => ({ request, reply }),
-      playground: process.env.ISPROD === 'false' ? true : false,
-      introspection: process.env.ISPROD === 'false' ? true : false,
+      playground: EnvLoader.get('NODE_ENV') !== 'production' ? true : false,
+      introspection: EnvLoader.get('NODE_ENV') !== 'production' ? true : false,
     }),
+    LoggerModule.forRoot({
+      pinoHttp: [
+        {
+          level: EnvLoader.get('NODE_ENV') !== 'production' ? 'debug' : 'info',
+          transport:
+            EnvLoader.get('NODE_ENV') !== 'production'
+              ? { target: 'pino-pretty' }
+              : undefined,
+        },
+        process.stdout,
+      ],
+    }),
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
