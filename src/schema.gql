@@ -11,6 +11,7 @@ type Customer {
   """Date and time when the object was updated last time."""
   updatedAt: Timestamp!
   email: String!
+  role: String!
 }
 
 """
@@ -18,15 +19,29 @@ type Customer {
 """
 scalar Timestamp
 
+type Tokens {
+  accessToken: String!
+  refreshToken: String!
+  type: String!
+}
+
 type Query {
   customers(data: GetCustomerInput!): [Customer!]!
+  customer(data: GetCustomerByIdOrEmailInput!): Customer!
+  login(data: LoginCustomerInput!): Tokens!
+  refresh(refreshToken: String!): Tokens!
 }
 
 input GetCustomerInput {
-  cursor: String
+  cursor: CustomerWhereUniqueInput
   skip: Int
   take: Int
   where: WhereCustomerInput
+  orderBy: OrderByCustomerInput
+}
+
+input CustomerWhereUniqueInput {
+  id: String
 }
 
 input WhereCustomerInput {
@@ -34,4 +49,46 @@ input WhereCustomerInput {
   email: String
   createdAt: Timestamp
   updatedAt: Timestamp
+}
+
+input OrderByCustomerInput {
+  createdAt: String
+}
+
+input GetCustomerByIdOrEmailInput {
+  id: String
+  email: String
+}
+
+input LoginCustomerInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  deleteCustomer(id: String!): Customer!
+  updateCustomer(data: UpdateCustomerInput!): Customer!
+  signup(data: SignupCustomerInput!): Customer!
+  activate(data: ActivationCustomerInput!): Boolean!
+}
+
+input UpdateCustomerInput {
+  id: String!
+  values: UpdateCustomerValueInput
+}
+
+input UpdateCustomerValueInput {
+  email: String
+}
+
+input SignupCustomerInput {
+  email: String!
+  password: String!
+  passwordConfirmation: String!
+}
+
+input ActivationCustomerInput {
+  email: String!
+  password: String!
+  activationCode: String!
 }
