@@ -32,6 +32,7 @@ import { EnvLoader } from './env.loader';
               ? { target: 'pino-pretty' }
               : undefined,
         },
+        // Possible to configure multiple destination streams.
         process.stdout,
       ],
     }),
