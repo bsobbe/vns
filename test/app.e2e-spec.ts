@@ -21,6 +21,10 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer()).get('/').expect(200).expect('Beep!');
   });
 
+  it('/graphql (GET)', () => {
+    return request(app.getHttpServer()).get('/graphql').expect(200);
+  });
+
   afterAll(async () => {
     await app.close();
   });
