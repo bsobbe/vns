@@ -75,6 +75,7 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [x] Dockerize.
 - [ ] End-to-end testing for GraphQL.
 - [ ] More unit test coverage.
+- [ ] Add production-ready dockerfile, node, and prisma configurations.
 - [ ] Server-side logout functionality.
 - [ ] Secure key rotation mechanism for refresh tokens.
 - [ ] Handling expiration for activation codes.
