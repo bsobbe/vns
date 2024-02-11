@@ -72,6 +72,7 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [x] Ability to verify customer's account after signup with activation code.
 - [x] Fix cursor in Customers query.
 - [x] Add orderBy to Customer query.
+- [x] Fix vulnerable dependencies.
 - [x] Dockerize.
 - [ ] End-to-end testing for GraphQL.
 - [ ] More unit test coverage.
