@@ -73,7 +73,8 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [x] Fix cursor in Customers query.
 - [x] Add orderBy to Customer query.
 - [x] Dockerize.
-- [ ] More test coverage.
+- [ ] End-to-end testing for GraphQL.
+- [ ] More unit test coverage.
 - [ ] Server-side logout functionality.
 - [ ] Secure key rotation mechanism for refresh tokens.
 - [ ] Handling expiration for activation codes.
