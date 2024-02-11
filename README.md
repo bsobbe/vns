@@ -1,6 +1,6 @@
 # VNS
 
-Original requirements `./Requirements.md`
+Original requirements [`./Requirements.md`](https://github.com/bsobbe/vns/blob/main/Requirements.md)
 
 ## Installation Guide
 
