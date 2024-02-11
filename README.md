@@ -85,6 +85,7 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [ ] More test coverage.
 - [ ] Improve exception handling.
 - [ ] Add production-ready dockerfile, node, and prisma configurations.
+- [ ] Email notification for activation codes.
 - [ ] Separation of admins and customers (eg. Abstracting User)?
 - [ ] Separation of activation codes from customer?
 - [ ] Multiple destination streams for logs?
