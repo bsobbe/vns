@@ -75,15 +75,16 @@ JWT_SECRET="SeriouslyPleaseDoNotUseThisAsTheRealSecretInsteadPickSomethingReally
 - [x] Fix vulnerable dependencies.
 - [x] Exception handling.
 - [x] More explicit return types.
+- [x] Some tests.
 - [x] Dockerize.
-- [ ] End-to-end testing for GraphQL.
 - [ ] Helper script to perform inside-container development actions easier (eg. Apply new migrations, prisma generate).
-- [ ] Add production-ready dockerfile, node, and prisma configurations.
+- [ ] End-to-end testing for GraphQL.
 - [ ] Server-side logout functionality.
 - [ ] Secure key rotation mechanism for refresh tokens.
 - [ ] Handling expiration for activation codes.
 - [ ] More test coverage.
 - [ ] Improve exception handling.
+- [ ] Add production-ready dockerfile, node, and prisma configurations.
 - [ ] Separation of admins and customers (eg. Abstracting User)?
 - [ ] Separation of activation codes from customer?
 - [ ] Multiple destination streams for logs?
