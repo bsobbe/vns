@@ -112,7 +112,7 @@ describe('CustomerService', () => {
     const error = new Error('Database error');
     mockPrisma.customer.findMany.mockRejectedValue(error);
     await expect(customerService.findAll(mockFindAllParams)).rejects.toThrow(
-      'Database error',
+      error,
     );
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'findAll() failed to fetch customers.',
@@ -138,9 +138,7 @@ describe('CustomerService', () => {
     const error = new Error('Database error');
     mockPrisma.customer.findFirst.mockRejectedValue(error);
 
-    await expect(customerService.findById({ id })).rejects.toThrow(
-      'Database error',
-    );
+    await expect(customerService.findById({ id })).rejects.toThrow(error);
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'findById() failed to find customer.',
       error,
@@ -165,9 +163,7 @@ describe('CustomerService', () => {
     const error = new Error('Database error');
     mockPrisma.customer.findFirst.mockRejectedValue(error);
 
-    await expect(customerService.findByEmail({ email })).rejects.toThrow(
-      'Database error',
-    );
+    await expect(customerService.findByEmail({ email })).rejects.toThrow(error);
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'findByEmail() failed to find customer.',
       error,
@@ -192,9 +188,7 @@ describe('CustomerService', () => {
     const error = new Error('Database error');
     mockPrisma.customer.delete.mockRejectedValue(error);
 
-    await expect(customerService.deleteById({ id })).rejects.toThrow(
-      'Database error',
-    );
+    await expect(customerService.deleteById({ id })).rejects.toThrow(error);
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'deleteById() failed to delete customer.',
       error,
@@ -223,7 +217,7 @@ describe('CustomerService', () => {
     mockPrisma.customer.update.mockRejectedValue(error);
 
     await expect(customerService.updateById({ id, values })).rejects.toThrow(
-      'Database error',
+      error,
     );
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'updateById() failed to update customer.',
@@ -254,9 +248,7 @@ describe('CustomerService', () => {
     const error = new Error('Database error');
     mockPrisma.customer.create.mockRejectedValue(error);
 
-    await expect(customerService.create(params)).rejects.toThrow(
-      'Database error',
-    );
+    await expect(customerService.create(params)).rejects.toThrow(error);
     expect(mockPinoLogger.error).toHaveBeenCalledWith(
       'create() failed to create customer.',
       error,
